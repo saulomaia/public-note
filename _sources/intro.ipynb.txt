@@ -4,7 +4,23 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### Introdução"
+    "## Introdução"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Página introdução"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
    ]
   },
   {
