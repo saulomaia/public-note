@@ -2,6 +2,19 @@
 
 Esta é a página inicial da analise "Tornozelados Homens" realizada pelo [Insight Data Science Lab](https://insightlab.ufc.br/).
 
+Aqui ainda é possível adicionar:
+
+Links
+
+[InsightLab](https://insightlab.ufc.br/)
+
+Notas
+
 ```{note}
-Insight Data Science Lab.
+Notas de recomendação e/ou alerta caso queira frisar alguma informação !
+```
+
+Referências
+
+```{bibliography} references.bib
 ```
