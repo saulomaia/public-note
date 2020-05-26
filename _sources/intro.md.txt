@@ -4,11 +4,11 @@ Esta é a página inicial da analise "Tornozelados Homens" realizada pelo [Insig
 
 Aqui ainda é possível adicionar:
 
-Links
+**Links**
 
 [InsightLab](https://insightlab.ufc.br/)
 
-Notas
+**Notas**
 
 ```{Note}
 Notas de recomendação e/ou alerta caso queira frisar alguma informação !
