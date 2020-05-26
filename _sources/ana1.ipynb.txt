@@ -15,6 +15,25 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "A ideia aqui é, caso o usuário/desenvolvedor queira, ocultar as células de código, células de input's e deixar visível somente células de markdown e as outputs como gráfico, por exemplo.\n",
+    "\n",
+    "Links: [InsightLab](https://insightlab.ufc.br/)\n",
+    "\n",
+    "Notas:\n",
+    "```{note}\n",
+    "Notas de recomendação e/ou alerta caso queira frisar alguma informação !\n",
+    "```\n",
+    "\n",
+    "Referências\n",
+    "\n",
+    "```{bibliography} ../references.bib\n",
+    "```"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 1,
    "metadata": {
