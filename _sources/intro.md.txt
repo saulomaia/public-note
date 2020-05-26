@@ -13,8 +13,3 @@ Notas
 ```{Note}
 Notas de recomendação e/ou alerta caso queira frisar alguma informação !
 ```
-
-Referências
-
-```{bibliography} /bib/references.bib
-```
