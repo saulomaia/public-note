@@ -166,6 +166,78 @@
 <h2>Página análise 2<a class="headerlink" href="#pagina-analise-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">altair.expr</span> <span class="kn">import</span> <span class="n">datum</span>
+
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="n">stocks</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">stocks</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">stocks</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;date:T&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;price:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;symbol:N&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="n">datum</span><span class="o">.</span><span class="n">symbol</span> <span class="o">==</span> <span class="s1">&#39;GOOG&#39;</span>
+<span class="p">)</span>
+
+<span class="n">base</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span> <span class="o">+</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-f4e9c9db1c3443b383579408b77859b8"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-f4e9c9db1c3443b383579408b77859b8") {
+      outputDiv = document.getElementById("altair-viz-f4e9c9db1c3443b383579408b77859b8");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"type": "nominal", "field": "symbol"}, "x": {"type": "temporal", "field": "date"}, "y": {"type": "quantitative", "field": "price"}}, "transform": [{"filter": "(datum.symbol === 'GOOG')"}]}, {"mark": "point", "encoding": {"color": {"type": "nominal", "field": "symbol"}, "x": {"type": "temporal", "field": "date"}, "y": {"type": "quantitative", "field": "price"}}, "transform": [{"filter": "(datum.symbol === 'GOOG')"}]}], "data": {"url": "https://vega.github.io/vega-datasets/data/stocks.csv"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -195,7 +267,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/analysis_2_3_0.png" src="_images/analysis_2_3_0.png" />
+<img alt="_images/analysis_2_4_0.png" src="_images/analysis_2_4_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -213,7 +285,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/analysis_2_4_0.png" src="_images/analysis_2_4_0.png" />
+<img alt="_images/analysis_2_5_0.png" src="_images/analysis_2_5_0.png" />
 </div>
 </div>
 </div>
